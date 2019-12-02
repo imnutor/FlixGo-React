@@ -1,0 +1,187 @@
+.sign {
+  display: block;
+  position: relative;
+}
+.sign__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+.sign__form {
+  background-color: #28282d;
+  -webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    display: block;
+    background-image: -moz-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+    background-image: -webkit-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+    background-image: -ms-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+    background-image: linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+    -webkit-box-shadow: 0 0 20px 0 rgba(255, 88, 96, 0.5);
+    box-shadow: 0 0 20px 0 rgba(255, 88, 96, 0.5);
+  }
+  input{
+      outline: none;
+  }
+}
+.sign__logo {
+  margin-bottom: 40px;
+  a {
+    max-width: 100%;
+    width: auto;
+  }
+  img {
+    max-width: 172px;
+  }
+}
+.sign__input {
+  background-color: #2b2b31;
+  border: none;
+  height: 50px;
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  width: 250px;
+  color: #fff;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0 20px;
+  letter-spacing: 0.2px;
+  font-family: "Open Sans", sans-serif;
+}
+.sign__group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.sign__group--checkbox {
+  width: 100%;
+  text-align: left;
+  input {
+    &:checked + label {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: "Open Sans", sans-serif;
+      position: relative;
+      cursor: pointer;
+      padding-left: 14px;
+      line-height: 22px;
+      margin: 0;
+      a {
+        background-image: -webkit-linear-gradient(
+          0deg,
+          #ff55a5 0%,
+          #ff5860 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #ff5860;
+        opacity: 0.75;
+        &:hover{
+            opacity: 1;
+        }
+      }
+    }
+    &:not(:checked) + label {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: "Open Sans", sans-serif;
+      position: relative;
+      cursor: pointer;
+      padding-left: 14px;
+      line-height: 22px;
+      margin: 0;
+      a {
+        background-image: -webkit-linear-gradient(
+          0deg,
+          #ff55a5 0%,
+          #ff5860 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #ff5860;
+        opacity: 0.75;
+        &:hover{
+            opacity: 1;
+        }
+      }
+    }
+  }
+  label {
+    &::selection {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+.sign__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-image: -moz-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+  background-image: -webkit-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+  background-image: -ms-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+  background-image: linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+  -webkit-box-shadow: 0 0 20px 0 rgba(255, 88, 96, 0.5);
+  box-shadow: 0 0 20px 0 rgba(255, 88, 96, 0.5);
+  opacity: 0.85;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 20px auto 0;
+  &:hover {
+    opacity: 1;
+    color: #fff;
+  }
+}
+.sign__text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Open Sans", sans-serif;
+  a {
+    position: relative;
+    background-image: -webkit-linear-gradient(0deg, #ff55a5 0%, #ff5860 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ff5860;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+@media (min-width: 360px) {
+  .sign__input {
+    width: 280px;
+  }
+}
+@media (min-width: 768px) {
+  .sign__form {
+    padding: 50px 60px;
+  }
+  .sign__logo {
+    margin-bottom: 50px;
+  }
+}

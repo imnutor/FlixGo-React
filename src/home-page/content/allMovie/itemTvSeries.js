@@ -1,0 +1,40 @@
+import React, { Component } from "react";
+import { IoIosPlay, IoIosStar } from "react-icons/io";
+import {NavLink} from "react-router-dom";
+
+export default class ItemTvSeries extends Component {
+
+  render() {
+    let { tvSeries } = this.props;
+    return (
+      <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
+        <div className="card">
+          <div className="card__cover">
+            <img src={tvSeries.imgTv} alt="" />
+            <NavLink to={`/detail-tv-series/${tvSeries.id}`} className="card__play">
+              <i>
+                <IoIosPlay />
+              </i>
+            </NavLink>
+          </div>
+          <div className="card__content">
+            <h3 className="card__title">
+              <a href="#">{tvSeries.nameTv}</a>
+            </h3>
+            <span className="card__category">
+              <a href="#">{tvSeries.tagTv}</a>
+            </span>
+            <span className="card__rate">
+              <i style={{ color: "rgb(255,88,96)", textAlign: "center" }}>
+                <IoIosStar />
+              </i>
+              {tvSeries.rateTv}
+            </span>
+          </div>
+
+          {/* end card */}
+        </div>
+      </div>
+    );
+  }
+}

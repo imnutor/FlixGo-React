@@ -1,0 +1,42 @@
+.section__partner{
+  padding: 60px 0;
+}
+.partner {
+  display: block;
+  margin: 15px 0;
+}
+.partner__img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  transition: 0.4s ease;
+  opacity: 0.75;
+}
+.partner:hover .partner__img {
+  opacity: 1;
+}
+.section__text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 25px;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.2px;
+}
+.section__title {
+  color: #fff;
+  font-weight: 300;
+  font-size: 28px;
+  margin-bottom: 25px;
+  b {
+    font-weight: 700;
+  }
+}
+.section__title--center {
+  text-align: center;
+}
+.section__title--no-margin {
+  margin-bottom: 10px;
+}
