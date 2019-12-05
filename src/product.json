@@ -1,0 +1,146 @@
+[
+    {
+      "id": "1",
+      "nameTv": "Game of Thrones S3",
+      "tagTv": "Mystery",
+      "rateTv": 8,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/gcTkNV5Vg1E",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-1.jpg",
+      "price": 56
+    },
+    {
+      "id": "2",
+      "nameTv": "Chernobyl",
+      "tagTv": "Mystery",
+      "rateTv": 8,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/Rle1Bywi61M",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-2.jpg",
+      "price": 23
+    },
+    {
+      "id": "3",
+      "nameTv": "Strange Things",
+      "tagTv": "Mystery",
+      "rateTv": 8,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/mnd7sFt5c3A",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-3.jpg",
+      "price": 38
+    },
+    {
+      "id": "4",
+      "nameTv": "Game of Thrones S6",
+      "tagTv": "Mystery",
+      "rateTv": 8,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/yu8eRaq1FUM",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-4.jpg",
+      "price": 20
+    },
+    {
+      "id": "5",
+      "nameTv": "Supernatural S13",
+      "tagTv": "Mystery",
+      "rateTv": 9,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/XNhvzLXGwRI",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-5.jpg",
+      "price": 40
+    },
+    {
+      "id": "6",
+      "nameTv": "Game of Thrones S2",
+      "tagTv": "Mystery",
+      "rateTv": 7,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/giYeaKsXnsI",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-6.jpg",
+      "price": 52
+    },
+    {
+      "id": "7",
+      "nameTv": "The Walking Dead",
+      "tagTv": "Mystery",
+      "rateTv": 5,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/Ie_6qO0B8AU",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-7.jpg",
+      "price": 25
+    },
+    {
+      "id": "8",
+      "nameTv": "Game of Thrones S5",
+      "tagTv": "Mystery",
+      "rateTv": 7,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/A0pLbTXPHng",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-8.jpg",
+      "price": 2
+    },
+    {
+      "id": "9",
+      "nameTv": "Game of Thrones S4",
+      "tagTv": "Mystery",
+      "rateTv": 6,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/xZY43QSx3Fk",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-9.jpg",
+      "price": 36
+    },
+    {
+      "id": "10",
+      "nameTv": "Game of Thrones s9",
+      "tagTv": "Mystery",
+      "rateTv": 6,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/rlR4PJn8b8I",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-10.jpg",
+      "price": 81
+    },
+    {
+      "id": "11",
+      "nameTv": "Supernatural S11",
+      "tagTv": "Mystery",
+      "rateTv": 6,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/DfcKMlFCqiU",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-11.png",
+      "price": 71
+    },
+    {
+      "id": "12",
+      "nameTv": "Supernatural S5",
+      "tagTv": "Mystery",
+      "rateTv": 8,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/1FI1_Bwqptk",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-12.jpg",
+      "price": 32
+    },
+    {
+      "id": "13",
+      "nameTv": "Supernatural S4",
+      "tagTv": "Mystery",
+      "rateTv": 6,
+      "resolution": "HD",
+      "trailer": "https://www.youtube.com/embed/wh_5Z8zdWSQ",
+      "descriptionTv": "Ned Stark comes an offer to become senior advisor to the ruler Robert Barateona-assume the position of the hands. Ned and his wife also became aware that competitors-House Lannisterov, with which the family relationship is the wife of King, responsible for the deaths of former Chief Adviser. Ned intends to find out who was responsible for the deaths of the hands.",
+      "imgTv": "./image/tvseries/tvseries-13.png",
+      "price": 4
+    }
+  ]
+  

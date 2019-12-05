@@ -142,24 +142,6 @@ export const userPostSignUpAPI = (user, history) => {
             console.log(err.response.data);
             alert(err.response.data);
         })
-//     return fetch("http://5d6a415a6b97ef00145b77cc.mockapi.io/api/SignUp", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Accept: "application/json"
-//       },
-//       body: JSON.stringify({ user })
-//     })
-//       .then(resp => resp.json())
-//       .then(data => {
-//         if (data.message) {
-//         } else {
-//           localStorage.setItem("token", JSON.stringify(user));
-//           dispatch(LoginUser(data.user));
-//         }
-//         console.log(data.user);
-        
-//       });
   };
 };
 export const userPostLoginAPI = (user, history) => {
@@ -189,5 +171,27 @@ export const LoginUser = currentUser => {
   return {
     type: ActionType.LOGIN_USER,
     currentUser
+  };
+};
+export const actLoginAdmin = (user, history) => {
+  return dispatch => {
+    Axios({
+      method: "POST",
+      url: "http://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
+      data: user
+    })
+      .then(result => {
+        console.log(result.data);
+        if (result.data.maLoaiNguoiDung === "GV") {
+          localStorage.setItem("userAdmin", JSON.stringify(result.data));
+          //Đá sang trang Dashboard Admin
+          history.push("/admin/dashboard");
+        } else {
+          alert("Bạn không có quyền truy cập");
+        }
+      })
+      .catch(errors => {
+        console.log(errors);
+      });
   };
 };

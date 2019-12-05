@@ -13,97 +13,76 @@ import {
 } from "react-icons/io";
 import CommentComponent from "../commentMovie/commentComponent";
 import * as action from "../../../redux/action/indexAPI";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-
-
-
+import * as ActionType from "../../../redux/contanst/actionType";
+import Modal from "../cart/modal";
 
 class DetailMovie extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.getDetailMovie(id);
-    window.scrollTo(0,0);  
+    window.scrollTo(0, 0);
   }
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state= {
+    this.state = {
       cart: []
-    }
+    };
   }
 
-  handleAddToCart = () => {
-    let {movie} = this.props;
-      const objItem = {
-        name:  movie.tenPhim,
-        image: movie.hinhAnh,
-        amount: 1,
-        price: 50
-      }
-      console.log(movie);
-    let index = this.state.cart.findIndex(item => {
-      return item.name === movie.name;
-    })
+  handleAddToCart = item => {
+    let { movie } = this.props;
+    const objItem = {
+      name: movie.tenPhim,
+      image: movie.hinhAnh,
+      price: 0
+    };
+  };
 
-    let cartUpdate = this.state.cart;
+  // sumAmount = () => {
+  //   return this.state.cart.reduce((sum, item)=> {
+  //     return (sum += item.amount);
+  //   }, 0)
+  // }
 
-    if(index !== -1) {
-      let itemUpdate = cartUpdate[index];
-      itemUpdate.amount += 1;
-    }else {
-      cartUpdate = [...this.state.cart, objItem];
+  // handleUpDownAmout = (status, item) => {
+  //   let index = this.state.cart.findIndex(obj => obj.name === item.name);
+  //   let updateCart = this.state.cart;
 
-      console.log(cartUpdate);
-    }
-    this.setState({
-      cart: cartUpdate
-    })
-  }
-  
-  sumAmount = () => {
-    return this.state.cart.reduce((sum, item)=> {
-      return (sum += item.amount);
-    }, 0)
-  }
+  //   if(status) {
+  //     updateCart[index].amount += 1;
+  //   } else{
+  //     if(updateCart[index].amount > 1) {
+  //       updateCart[index].amount -= 1;
+  //     }
+  //   }
+  //   this.setState({
+  //     cart:updateCart
+  //   })
+  // }
 
-  handleUpDownAmout = (status, item) => {
-    let index = this.state.cart.findIndex(obj => obj.name === item.name);
-    let updateCart = this.state.cart;
+  // handleDelete = item => {
+  //   let {cart} = {...this.state};
 
-    if(status) {
-      updateCart[index].amount += 1;
-    } else{
-      if(updateCart[index].amount > 1) {
-        updateCart[index].amount -= 1;
-      }
-    }
-    this.setState({
-      cart:updateCart
-    })
-  }
+  //   let index = this.state.cart.findIndex(obj => {
+  //     return obj.name === item.name;
+  //   })
 
-  handleDelete = item => {
-    let {cart} = {...this.state};
+  //   cart.splice(index, 1);
 
-    let index = this.state.cart.findIndex(obj => {
-      return obj.name === item.name;
-    })
-
-    cart.splice(index, 1);
-
-    this.setState({
-      cart
-    })
-  }
-  
+  //   this.setState({
+  //     cart
+  //   })
+  // }
 
   render() {
     let { movie } = this.props;
     console.log(movie);
-    
+
     return (
       <section>
-        
         {/* details content */}
         <div
           className="section details"
@@ -126,18 +105,25 @@ class DetailMovie extends Component {
                     <div className="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
                       <div className="card__cover">
                         <img src={movie.hinhAnh} alt="" />
-                        <button className="addToCart__btn" onClick={() => {this.handleAddToCart(movie)}} >
-                          Add to{" "}
-                          <i
-                            style={{
-                              fontSize: "20px",
-                              textAlign: "center",
-                              padding: "0 0 3px 5px"
+                        <NavLink to="/login/cart">
+                          <button
+                            className="addToCart__btn"
+                            onClick={() => {
+                              this.handleAddToCart();
                             }}
                           >
-                            <IoIosCart />
-                          </i>
-                        </button>
+                            Add to{" "}
+                            <i
+                              style={{
+                                fontSize: "20px",
+                                textAlign: "center",
+                                padding: "0 0 3px 5px"
+                              }}
+                            >
+                              <IoIosCart />
+                            </i>
+                          </button>
+                        </NavLink>
                       </div>
                     </div>
                     {/* end card cover */}
@@ -283,7 +269,8 @@ class DetailMovie extends Component {
 }
 const mapStateToProps = state => {
   return {
-    movie: state.movieReducer.movie
+    movie: state.movieReducer.movie,
+    currentCart: state.userReducer.currentCart
   };
 };
 
@@ -291,7 +278,7 @@ const mapDispatchToProps = dispatch => {
   return {
     getDetailMovie: id => {
       dispatch(action.actDetailMovieAPI(id));
-    }
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(DetailMovie);

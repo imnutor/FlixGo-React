@@ -9,7 +9,10 @@ import Modal from "./home-page/content/cart/modal";
 
 import Profile from "./home-page/signIn__signUp/profile";
 
-import {Redirect} from "react-router-dom";
+import NavBarAdmin from "./admin/NavBarAdmin";
+import AddMovie from "./admin/addMovie";
+import DeleteMovie from "./admin/deleteMovie";
+import UpdateMovie from "./admin/updateMovie";
 
 const routeHome = [
     {
@@ -62,5 +65,27 @@ const routeProfie = [
     }
 ]
 
+const routeAdmin = [
+    // {
+    //     path:"/admin/dashboard",
+    //     exact:false,
+    //     component:NavBarAdmin
+    // },
+    // {
+    //     path:"/admin/add-movie",
+    //     exact:false,
+    //     component:AddMovie
+    // },
+    // {
+    //     path:"/admin/delete-movie",
+    //     exact:false,
+    //     component:DeleteMovie,
+    // },
+    // {
+    //     path:"/admin/update-movie",
+    //     exact:false,
+    //     component:UpdateMovie
+    // }
+]
 
-export {routeHome, routeProfie};
+export {routeHome, routeProfie, routeAdmin};
