@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
 import { Route, Redirect } from "react-router-dom";
-import NavBarAdmin from "../admin/NavBarAdmin"
+import NavBarAdmin from "../admin/navBarAdmin";
 
 const AdminLayout = props => {
   return (
     <Fragment>
-      <div>Admin Menu Home</div>
+      <NavBarAdmin />
       {props.children}
     </Fragment>
   );
@@ -23,7 +23,7 @@ export default function AdminTemplate({ Component, ...props }) {
             </AdminLayout>
           );
         }
-        return <Redirect to="/admin/" />;
+        return <Redirect to="/admin" />
       }}
     />
   );

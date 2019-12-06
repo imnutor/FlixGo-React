@@ -12,6 +12,7 @@ import SignUp from "./home-page/signIn__signUp/signUp";
 
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Admin from "./admin/admin";
+import NavBarAdmin from "./admin/navBarAdmin";
 
 function App() {
   const showMenuHome = routes => {
@@ -50,7 +51,7 @@ function App() {
             key={index}
             path={item.path}
             exact={item.exact}
-            Component={item.Component}
+            Component={item.component}
           />
         );
       });
@@ -58,7 +59,7 @@ function App() {
   };
   return (
     <HashRouter>
-      <div>
+      <div className="App">
         <Switch>
           {showMenuHome(routeHome)}
           {showProfile(routeProfie)}

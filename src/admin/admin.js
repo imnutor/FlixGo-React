@@ -29,8 +29,12 @@ class Admin extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-sm-6 mx-auto">
-            <form onSubmit={this.handleOnSubmit}>
+          
+          <div className="col-sm-6 mx-auto profile__form">
+          <div className="img-fluid">
+            <img src="./image/admin2.png" alt="" style={{display:"block", marginLeft:"auto", marginRight:"auto"}} />
+          </div>
+            <form onSubmit={this.handleOnSubmit} >
               <div className="form-group">
                 <label htmlFor="" style={{color:"#fff"}}>Username</label>
                 <input

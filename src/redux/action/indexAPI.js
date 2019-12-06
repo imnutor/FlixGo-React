@@ -177,15 +177,14 @@ export const actLoginAdmin = (user, history) => {
   return dispatch => {
     Axios({
       method: "POST",
-      url: "http://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
+      url: "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
       data: user
     })
       .then(result => {
         console.log(result.data);
-        if (result.data.maLoaiNguoiDung === "GV") {
+        if (result.data.maLoaiNguoiDung === "KhachHang") {
           localStorage.setItem("userAdmin", JSON.stringify(result.data));
-          //Đá sang trang Dashboard Admin
-          history.push("/admin/dashboard");
+          history.push('/admin/dashboard');
         } else {
           alert("Bạn không có quyền truy cập");
         }
@@ -195,3 +194,22 @@ export const actLoginAdmin = (user, history) => {
       });
   };
 };
+export const actAddMovie = phim => {
+  const user = JSON.parse(localStorage.getItem("userAdmin"));
+  return dispatch => {
+    Axios({
+      method:"POST",
+      url:"http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim",
+      data: { ...phim, maNhom: "GP06", ngayKhoiChieu: "2019-07-29T00:00:00"},
+      headers: {
+        Authorization: `Bearer ${user.accessToken}`
+      }
+    })
+    .then(result => {
+      console.log(result);
+    })
+    .catch(err => {
+      console.log(err.response.data);
+    });
+  }
+}

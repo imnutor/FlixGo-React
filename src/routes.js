@@ -9,7 +9,7 @@ import Modal from "./home-page/content/cart/modal";
 
 import Profile from "./home-page/signIn__signUp/profile";
 
-import NavBarAdmin from "./admin/NavBarAdmin";
+import HomeAdmin from "./admin/homeAdmin";
 import AddMovie from "./admin/addMovie";
 import DeleteMovie from "./admin/deleteMovie";
 import UpdateMovie from "./admin/updateMovie";
@@ -66,26 +66,26 @@ const routeProfie = [
 ]
 
 const routeAdmin = [
-    // {
-    //     path:"/admin/dashboard",
-    //     exact:false,
-    //     component:NavBarAdmin
-    // },
-    // {
-    //     path:"/admin/add-movie",
-    //     exact:false,
-    //     component:AddMovie
-    // },
-    // {
-    //     path:"/admin/delete-movie",
-    //     exact:false,
-    //     component:DeleteMovie,
-    // },
-    // {
-    //     path:"/admin/update-movie",
-    //     exact:false,
-    //     component:UpdateMovie
-    // }
+    {
+        path:"/admin/dashboard",
+        exact:true,
+        component:HomeAdmin
+    },
+    {
+        path:"/admin/add-movie",
+        exact:false,
+        component:AddMovie
+    },
+    {
+        path:"/admin/delete-movie",
+        exact:false,
+        component:DeleteMovie,
+    },
+    {
+        path:"/admin/update-movie",
+        exact:false,
+        component:UpdateMovie
+    }
 ]
 
 export {routeHome, routeProfie, routeAdmin};
