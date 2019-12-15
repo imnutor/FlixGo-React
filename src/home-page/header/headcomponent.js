@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { IoIosSearch, IoMdLogIn, IoIosCart } from "react-icons/io";
 import HeaderSearch from "./headerSearch";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import $ from "jquery";
-import Modal from "../content/cart/modal";
 
-export default class Headcomponent extends Component {
+
+export default  class Headcomponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -72,9 +72,10 @@ export default class Headcomponent extends Component {
     });
   };
 
+
   render() {
     return (
-      <header className="sticky header">
+      <header className="header">
         <div className="header__wrap">
           <div className="container">
             
@@ -82,7 +83,7 @@ export default class Headcomponent extends Component {
               <div className="col-12">
                 <div className="header__content">
                   <NavLink className="header__logo" to="/" exact>
-                    <img src="./image/logo.svg" alt="" />
+                    <img src="/image/logo.svg" alt="" />
                   </NavLink>
 
                   <ul className="header__nav">
@@ -167,6 +168,7 @@ export default class Headcomponent extends Component {
                 transitionLeaveTimeout={300}
               >
                 {this.state.isToggle ? <HeaderSearch /> : null}
+                
               </ReactCSSTransitionGroup>
               
             </div>

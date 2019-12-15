@@ -55,7 +55,7 @@ export default class CommentComponent extends Component {
                             <div className="comments__autor">
                               <img
                                 className="comments__avatar"
-                                src="./image/user.png"
+                                src="/image/user.png"
                                 alt=""
                               />
                               <span className="comments__name">John Doe</span>
@@ -97,7 +97,7 @@ export default class CommentComponent extends Component {
                             <div className="comments__autor">
                               <img
                                 className="comments__avatar"
-                                src="./image/user.png"
+                                src="/image/user.png"
                                 alt=""
                               />
                               <span className="comments__name">John Doe</span>
@@ -136,7 +136,7 @@ export default class CommentComponent extends Component {
                             <div className="comments__autor">
                               <img
                                 className="comments__avatar"
-                                src="./image/user.png"
+                                src="/image/user.png"
                                 alt=""
                               />
                               <span className="comments__name">John Doe</span>

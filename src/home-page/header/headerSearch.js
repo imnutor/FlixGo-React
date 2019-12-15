@@ -1,105 +1,71 @@
 import React, { Component } from "react";
-import _ from "lodash";
-import { Search, Grid} from "semantic-ui-react";
-
 import { connect } from "react-redux";
-import product from "../../product.json";
-import * as action from "../../redux/action/indexAPI"
- 
-const initialState = { isLoading: false, results: [], value: '' }
 
-for (var i = 0; i < product.length ; i++) {
-  
-  
-  var source = _.times(10, () => ({
-    title: product[getRandom(i)].nameTv,
-    image: product[i].imgTv,
-    price: product[i].price
-  }))
-}
-function getRandom(max){
-  return Math.floor(Math.random() * Math.floor(max) );
-}
-// const source = _.times(13, () => ({
-//   title: product[getRandom(13)].nameTv
-// }))
+import SearchItem from "./searchItem.js";
+import * as action from "../../redux/action/indexAPI";
 
-
-console.log(source);
-
- class HeaderSearch extends Component {
-   
-  state = initialState
-
-  handleResultSelect = (e, { result }) => this.setState({ value: result.title })
-
-  handleSearchChange = (e, { value }) => {
-    this.setState({ isLoading: true, value })
-
-    setTimeout(() => {
-      if (this.state.value.length < 1) return this.setState(initialState)
-
-      const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
-      const isMatch = (result) => re.test(result.title)
-
-      this.setState({
-        isLoading: false,
-        results: _.filter(source, isMatch),
-      })
-    }, 300)
+class HeaderSearch extends Component {
+  constructor(props) {
+    super(props);
   }
-  render() {
-    const { isLoading, value, results } = this.state
+  renderItemSearch = () => {
+    let { itemMovie, keyword, itemTvSeries, itemCartoon } = this.props;
+    console.log(keyword);
+
+    itemMovie = itemMovie.filter(item => {
+      return item.tenPhim.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
+    });
+
+    return itemMovie.map((item, index) => {
+      if (keyword.length === 0) {
+        return null;
+      } else {
+        return <SearchItem key={index} item={item} />;
+      }
+      
+    });
     
+  };
+
+  render() {
     return (
-      <Grid>
-        <Grid.Column width={6}>
-          <Search
-            loading={isLoading}
-            onResultSelect={this.handleResultSelect}
-            onSearchChange={_.debounce(this.handleSearchChange, 500, {
-              leading: true,
-            })}
-            results={results}
-            value={value}
-            {...this.props}
-          />
-        </Grid.Column>
-        </Grid>
-        // <form action="#" className="header__search">
-        //   <div className="container">
-        //     <div className="row">
-        //       <div className="col-12">
-        //         <div className="header__search-content">
-        //           <input
-        //             type="text"
-        //             placeholder="Search for a movie, TV Series that you are looking for"
-        //           />
-        //           <button type="button">search</button>
-        //         </div>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </form>
+      <div className="header__search">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <div className="header__search-content">
+                <input
+                  type="text"
+                  placeholder="Search for a movie, TV Series that you are looking for"
+                  onChange={event => {
+                    this.props.onFilter(event.target.value);
+                  }}
+                />
+                <button type="button">search</button>
+              </div>
+            </div>
+            <div className="col-12">
+              <div className="search__item">{  this.renderItemSearch() }</div>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
-let mapStateToProps = state => {
+const mapStateToProps = state => {
   return {
-    
+    itemMovie: state.movieReducer.listMovie,
+    keyword: state.movieReducer.keyword,
     itemTvSeries: state.movieReducer.listTvSeries,
     itemCartoon: state.movieReducer.listCartoon
   };
 };
-
-const mapDispatchToProps = dispatch => {
+const mapDisPatchToProps = dispatch => {
   return {
-    getListTvSeries: () => {
-      dispatch(action.actGetListTvSeriesAPI());
-    },
-    getListCartoon: () => {
-      dispatch(action.actGetListCartoonAPI());
+    onFilter: keyword => {
+      dispatch(action.onFilter(keyword));
     }
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderSearch);
+export default connect(mapStateToProps, mapDisPatchToProps)(HeaderSearch);

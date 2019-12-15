@@ -68,7 +68,7 @@ class ContentBody extends Component {
     );
   }
 }
-let mapStateToProps = state => {
+const mapStateToProps = state => {
   return {
     itemMovie: state.movieReducer.listMovie,
     itemTvSeries: state.movieReducer.listTvSeries,

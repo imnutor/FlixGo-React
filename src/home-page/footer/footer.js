@@ -13,12 +13,12 @@ export default class Footer extends Component {
               <ul className="footer__app">
                 <li>
                   <a href="#">
-                    <img src="./image/Download_on_the_App_Store_Badge.svg" alt="" />
+                    <img src="/image/Download_on_the_App_Store_Badge.svg" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="./image/google-play-badge.png" alt="" />
+                    <img src="/image/google-play-badge.png" alt="" />
                   </a>
                 </li>
               </ul>

@@ -15,8 +15,7 @@ import CommentComponent from "../commentMovie/commentComponent";
 import * as action from "../../../redux/action/indexAPI";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import * as ActionType from "../../../redux/contanst/actionType";
-import Modal from "../cart/modal";
+
 
 class DetailMovie extends Component {
   componentDidMount() {
@@ -33,12 +32,7 @@ class DetailMovie extends Component {
   }
 
   handleAddToCart = item => {
-    let { movie } = this.props;
-    const objItem = {
-      name: movie.tenPhim,
-      image: movie.hinhAnh,
-      price: 0
-    };
+    
   };
 
   // sumAmount = () => {
@@ -87,7 +81,7 @@ class DetailMovie extends Component {
         <div
           className="section details"
           style={{
-            background: "url(./image/covers/slide-3.png) no-repeat center/cover"
+            background: "url(/image/covers/slide-3.png) no-repeat center/cover"
           }}
         >
           <div className="container">

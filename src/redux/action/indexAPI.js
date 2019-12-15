@@ -127,46 +127,46 @@ export const actDetailCartoon = Cartoon => {
 export const userPostSignUpAPI = (user, history) => {
   return dispatch => {
     Axios({
-        method:"POST",
-        url:"http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy",
-        data: user,
+      method: "POST",
+      url: "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy",
+      data: user
     })
-        .then(result => {
-            console.log(result.data);
-            localStorage.setItem("userSignUp", JSON.stringify(result.data));
-            dispatch(LoginUser(result.data));
-            alert("Success");
-            history.push("/login");
-          })
-        .catch(err => {
-            console.log(err.response.data);
-            alert(err.response.data);
-        })
+      .then(result => {
+        console.log(result.data);
+        localStorage.setItem("userSignUp", JSON.stringify(result.data));
+        dispatch(LoginUser(result.data));
+        alert("Success");
+        history.push("/login");
+      })
+      .catch(err => {
+        console.log(err.response.data);
+        alert(err.response.data);
+      });
   };
 };
 export const userPostLoginAPI = (user, history) => {
   return dispatch => {
-      Axios({
-          method:"POST",
-          url:"http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
-          data:user
-      })
+    Axios({
+      method: "POST",
+      url: "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
+      data: user
+    })
       .then(result => {
-          console.log(result.data);
-          if(result.data.maLoaiNguoiDung === "KhachHang"){
+        console.log(result.data);
+        if (result.data.maLoaiNguoiDung === "KhachHang") {
           localStorage.setItem("userLogin", JSON.stringify(result.data));
-          history.push('/');
+          history.push("/");
           dispatch(LoginUser(result.data));
-        } else{
+        } else {
           alert("something went wrong");
         }
       })
       .catch(err => {
-          console.log(err.response.data); 
-          alert(err.response.data);
-      })
-  }
-}
+        console.log(err.response.data);
+        alert(err.response.data);
+      });
+  };
+};
 export const LoginUser = currentUser => {
   return {
     type: ActionType.LOGIN_USER,
@@ -184,7 +184,7 @@ export const actLoginAdmin = (user, history) => {
         console.log(result.data);
         if (result.data.maLoaiNguoiDung === "KhachHang") {
           localStorage.setItem("userAdmin", JSON.stringify(result.data));
-          history.push('/admin/dashboard');
+          history.push("/admin/dashboard");
         } else {
           alert("Bạn không có quyền truy cập");
         }
@@ -198,18 +198,42 @@ export const actAddMovie = phim => {
   const user = JSON.parse(localStorage.getItem("userAdmin"));
   return dispatch => {
     Axios({
-      method:"POST",
-      url:"http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim",
-      data: { ...phim, maNhom: "GP06", ngayKhoiChieu: "2019-07-29T00:00:00"},
+      method: "POST",
+      url: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim",
+      data: { ...phim, maNhom: "GP06", ngayKhoiChieu: "2019-07-29T00:00:00" },
       headers: {
         Authorization: `Bearer ${user.accessToken}`
       }
     })
-    .then(result => {
-      console.log(result);
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log(err.response.data);
+      });
+  };
+};
+export const actDeleteMovie = id => {
+  const user = JSON.parse(localStorage.getItem("userAdmin"));
+  return dispatch => {
+    Axios({
+      method: "DELETE",
+      url: `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim?MaPhim=${id}`,
+      headers: {
+        Authorization: `Bearer ${user.accessToken}`
+      }
     })
-    .catch(err => {
-      console.log(err.response.data);
-    });
-  }
-}
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+};
+export const onFilter = keyword => {
+  return {
+    type: ActionType.FILTER,
+    keyword
+  };
+};

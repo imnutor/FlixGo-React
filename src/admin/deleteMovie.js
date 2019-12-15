@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
+import {connect} from "react-redux";
+import * as action from "../redux/action/indexAPI"
 
-export default class DeleteMovie extends Component {
+class DeleteMovie extends Component {
+    componentDidMount(){
+        console.log(this.props)
+        
+        
+    }
     render() {
         return (
             <div style={{color:"#fff"}}>
@@ -9,3 +16,11 @@ export default class DeleteMovie extends Component {
         )
     }
 }
+const mapDispatchToProps = dispatch => {
+    return {
+        deleteMovie: id => {
+            dispatch(action.actDeleteMovie(id))
+        }
+    }
+}
+export default connect(null,mapDispatchToProps)(DeleteMovie);

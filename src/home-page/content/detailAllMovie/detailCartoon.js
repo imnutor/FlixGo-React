@@ -32,7 +32,7 @@ class DetailCartoon extends Component {
         <div
           className="section details"
           style={{
-            background: "url(./image/covers/slide-3.png) no-repeat center/cover"
+            background: "url(/image/covers/slide-3.png) no-repeat center/cover"
           }}
         >
           <div className="container">

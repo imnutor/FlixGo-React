@@ -5,32 +5,32 @@ export default class OurPartners extends Component {
   arrayImgPartner = [
     {
       id: 1,
-      imgPartner: "./image/partners/themeforest-light-background.png",
+      imgPartner: "/image/partners/themeforest-light-background.png",
       linkPage:"https://themeforest.net/"
     },
     {
       id: 2,
-      imgPartner: "./image/partners/3docean-light-background.png",
+      imgPartner: "/image/partners/3docean-light-background.png",
       linkPage:"https://3docean.net/"
     },
     {
       id: 3,
-      imgPartner: "./image/partners/activeden-light-background.png",
+      imgPartner: "/image/partners/activeden-light-background.png",
       linkPage:"https://themeforest.net/authors/top?level=12&site=activeden.net&gclid=EAIaIQobChMIyZyturHp5QIVx6mWCh2HWwybEAAYASAAEgIn2fD_BwE"
     },
     {
       id: 4,
-      imgPartner: "./image/partners/audiojungle-light-background.png"
+      imgPartner: "/image/partners/audiojungle-light-background.png"
       ,linkPage:"https://audiojungle.net/user/masterblockbuster/portfolio?utf8=%E2%9C%93&order_by=rating"
     },
     {
       id: 5,
-      imgPartner: "./image/partners/codecanyon-light-background.png",
+      imgPartner: "/image/partners/codecanyon-light-background.png",
       linkPage:"https://codecanyon.net/"
     },
     {
       id: 6,
-      imgPartner: "./image/partners/photodune-light-background.png",
+      imgPartner: "/image/partners/photodune-light-background.png",
       linkPage:"https://photodune.net/"
     }
   ];
@@ -45,7 +45,7 @@ export default class OurPartners extends Component {
       <section
         className="section__partner"
         style={{
-          background: "url(./image/covers/slide-3.png) no-repeat center/cover"
+          background: "url(/image/covers/slide-3.png) no-repeat center/cover"
         }}
       >
         <div className="container">

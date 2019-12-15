@@ -10,9 +10,9 @@ import PageNotFound from "./not-found-page/pageNotFound";
 import SignIn from "./home-page/signIn__signUp/signIn";
 import SignUp from "./home-page/signIn__signUp/signUp";
 
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Admin from "./admin/admin";
-import NavBarAdmin from "./admin/navBarAdmin";
+
 
 function App() {
   const showMenuHome = routes => {
@@ -58,7 +58,7 @@ function App() {
     }
   };
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="App">
         <Switch>
           {showMenuHome(routeHome)}
@@ -70,7 +70,7 @@ function App() {
           <Route path="" exact={false} component={PageNotFound} />
         </Switch>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

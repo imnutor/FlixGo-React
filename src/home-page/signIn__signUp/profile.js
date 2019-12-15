@@ -17,7 +17,7 @@ class Profile extends Component {
     return (
       <div className="content">
           <section
-          className="section section--first" style={{background:"url(./image/section/section.jpg) no-repeat center/cover"}}
+          className="section section--first" style={{background:"url(/image/section/section.jpg) no-repeat center/cover"}}
         >
           <div className="container">
             <div className="row">
@@ -39,7 +39,7 @@ class Profile extends Component {
                 <div className="profile__content">
                   <div className="profile__user">
                     <div className="profile__avatar">
-                      <img src="./image/user.png" alt="" />
+                      <img src="/image/user.png" alt="" />
                     </div>
                     <div className="profile__meta">
                       <h3>{userInfo.taiKhoan}</h3>
