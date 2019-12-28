@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {NavLink} from "react-router-dom";
 
 export default class searchItem extends Component {
   render() {
@@ -6,7 +7,7 @@ export default class searchItem extends Component {
     let { item } = this.props;
     return (
       // <div>
-        <a href="">
+        <NavLink to={`/detail-movie/${item.tenPhim}`}>
           <div className="row">
             <div className="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-2">
               <div className="card__cover">
@@ -28,7 +29,7 @@ export default class searchItem extends Component {
               </div>
             </div>
           </div>
-        </a>
+        </NavLink>
       // </div>
     );
   }

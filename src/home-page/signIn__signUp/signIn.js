@@ -29,9 +29,9 @@ class SignIn extends Component {
               <div className="sign__content">
                 {/* authorization form */}
                 <form onSubmit={this.handleOnSubmit} className="sign__form">
-                  <a href="#" className="sign__logo">
+                  <NavLink to="/" className="sign__logo">
                     <img src="./image/logo.svg" alt="" />
-                  </a>
+                  </NavLink>
                   <div className="sign__group">
                     <input
                       name="taiKhoan"

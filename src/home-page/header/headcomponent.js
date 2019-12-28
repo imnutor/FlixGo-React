@@ -169,12 +169,10 @@ export default  class Headcomponent extends Component {
               >
                 {this.state.isToggle ? <HeaderSearch /> : null}
                 
-              </ReactCSSTransitionGroup>
-              
+              </ReactCSSTransitionGroup>             
             </div>
           </div>
         </div>
-        
       </header>
     );
   }

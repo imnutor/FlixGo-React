@@ -50,8 +50,14 @@ class DetailCartoon extends Component {
                     <div className="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
                       <div className="card__cover">
                         <img src={Cartoon.imgCartoon} alt="" />
-                        <a href="#" className="addToCart__btn">
-                          Add to{" "}
+                        <button
+                          href="#"
+                          className="addToCart__btn"
+                          onClick={() => {
+                            this.props.addToCart(Cartoon);
+                          }}
+                        >
+                          Add to
                           <i
                             style={{
                               fontSize: "20px",
@@ -61,7 +67,7 @@ class DetailCartoon extends Component {
                           >
                             <IoIosCart />
                           </i>
-                        </a>
+                        </button>
                       </div>
                     </div>
                     {/* end card cover */}
@@ -216,6 +222,22 @@ const mapDispatchToProps = dispatch => {
   return {
     getDetailCartoon: id => {
       dispatch(action.actDetailCartoonAPI(id));
+    },
+    addToCart: Cartoon => {
+      const itemCart = {
+        maPhim: Cartoon.id,
+        tenPhim: Cartoon.nameCartoon,
+        hinhAnh: Cartoon.imgCartoon,
+        danhGia: Cartoon.rateCartoon,
+        giaBan: Cartoon.price
+      };
+      const action = {
+        type: "ADD_TO_CART",
+        itemCart: itemCart
+      };
+      console.log(action);
+
+      dispatch(action);
     }
   };
 };

@@ -17,6 +17,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
 
+
 class DetailMovie extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
@@ -24,56 +25,9 @@ class DetailMovie extends Component {
     window.scrollTo(0, 0);
   }
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      cart: []
-    };
-  }
-
-  handleAddToCart = item => {
-    
-  };
-
-  // sumAmount = () => {
-  //   return this.state.cart.reduce((sum, item)=> {
-  //     return (sum += item.amount);
-  //   }, 0)
-  // }
-
-  // handleUpDownAmout = (status, item) => {
-  //   let index = this.state.cart.findIndex(obj => obj.name === item.name);
-  //   let updateCart = this.state.cart;
-
-  //   if(status) {
-  //     updateCart[index].amount += 1;
-  //   } else{
-  //     if(updateCart[index].amount > 1) {
-  //       updateCart[index].amount -= 1;
-  //     }
-  //   }
-  //   this.setState({
-  //     cart:updateCart
-  //   })
-  // }
-
-  // handleDelete = item => {
-  //   let {cart} = {...this.state};
-
-  //   let index = this.state.cart.findIndex(obj => {
-  //     return obj.name === item.name;
-  //   })
-
-  //   cart.splice(index, 1);
-
-  //   this.setState({
-  //     cart
-  //   })
-  // }
-
   render() {
     let { movie } = this.props;
-    console.log(movie);
+    
 
     return (
       <section>
@@ -99,14 +53,14 @@ class DetailMovie extends Component {
                     <div className="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
                       <div className="card__cover">
                         <img src={movie.hinhAnh} alt="" />
-                        <NavLink to="/login/cart">
-                          <button
+                        <a href="#">
+                          <button 
                             className="addToCart__btn"
                             onClick={() => {
-                              this.handleAddToCart();
+                              this.props.addToCart(movie);
                             }}
                           >
-                            Add to{" "}
+                            Add to
                             <i
                               style={{
                                 fontSize: "20px",
@@ -117,7 +71,7 @@ class DetailMovie extends Component {
                               <IoIosCart />
                             </i>
                           </button>
-                        </NavLink>
+                        </a>
                       </div>
                     </div>
                     {/* end card cover */}
@@ -264,7 +218,6 @@ class DetailMovie extends Component {
 const mapStateToProps = state => {
   return {
     movie: state.movieReducer.movie,
-    currentCart: state.userReducer.currentCart
   };
 };
 
@@ -273,6 +226,22 @@ const mapDispatchToProps = dispatch => {
     getDetailMovie: id => {
       dispatch(action.actDetailMovieAPI(id));
     },
+    addToCart: (movie) => {
+      const itemCart = {
+        maPhim: movie.maPhim,
+        tenPhim: movie.tenPhim,
+        hinhAnh: movie.hinhAnh,
+        danhGia: movie.danhGia,
+        giaBan: 40,
+      }
+      const action = {
+        type: 'ADD_TO_CART',
+        itemCart: itemCart
+      }
+      console.log(action);
+      
+      dispatch(action)
+    }   
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(DetailMovie);

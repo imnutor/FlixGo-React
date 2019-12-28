@@ -5,5 +5,6 @@ export const DETAIL_MOVIE = "DETAIL_MOVIE";
 export const DETAIL_TVSERIES = "DETAIL_TVSERIES";
 export const DETAIL_CARTOON = "DETAIL_CARTOON";
 export const LOGIN_USER = "LOGIN_USER";
-export const ADD_TO_CART = "ADD_TO_CART";
 export const FILTER = "FILTER";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_ITEM = "REMOVE_ITEM";

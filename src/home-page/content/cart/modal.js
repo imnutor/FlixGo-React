@@ -1,17 +1,10 @@
 import React, { Component } from "react";
 import Item from "./item";
+import { connect } from "react-redux";
 
-export default class Modal extends Component {
-  componentDidMount(){
-    console.log(this.props);
-    
-  }
-
-  renderTable = () => {
-    
-  };
-
+class Modal extends Component {
   render() {
+    let {userInfo } = this.props
     return (
       <div className="container">
         <div className="row">
@@ -20,21 +13,16 @@ export default class Modal extends Component {
             <div className="profile__form">
               <div className="row">
                 <div className="col-12">
-                  <h4 className="profile__title">My Cart</h4>
+                  <h4 className="profile__title">{userInfo.hoTen}'s Cart</h4>
                 </div>
-<Item />
-                
-                <div className="col-12">
-                  <button
-                    className="profile__btn"
-                    type="button"
-                    onClick={() => {
-                      this.renderTable();
-                    }}
-                  >
-                    Checkout
-                  </button>
-                </div>
+                <Item />
+                {this.props.cart.length === 0 ? null : (
+                  <div className="col-12">
+                    <button className="profile__btn" type="button">
+                      Checkout
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -43,3 +31,10 @@ export default class Modal extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    cart: state.userReducer.cart,
+    userInfo: state.userReducer.currentUser
+  };
+};
+export default connect(mapStateToProps, null)(Modal);

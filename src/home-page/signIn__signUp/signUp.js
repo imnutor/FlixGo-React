@@ -34,9 +34,9 @@ class SignUp extends Component {
               <div className="sign__content">
                 {/* registration form */}
                 <form className="sign__form" onSubmit={this.handleOnSubmit}>
-                  <a href="#" className="sign__logo">
+                  <NavLink to="" className="sign__logo">
                     <img src="./image/logo.svg" alt="" />
-                  </a>
+                  </NavLink>
                   <div className="sign__group">
                     <input
                       name="hoTen"
