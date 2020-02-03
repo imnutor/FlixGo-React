@@ -83,7 +83,7 @@ export default  class Headcomponent extends Component {
               <div className="col-12">
                 <div className="header__content">
                   <NavLink className="header__logo" to="/" exact>
-                    <img src="/image/logo.svg" alt="" />
+                    <img src="/image/logo-fix.png" alt="" />
                   </NavLink>
 
                   <ul className="header__nav">

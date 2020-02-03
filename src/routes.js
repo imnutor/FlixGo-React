@@ -9,7 +9,8 @@ import Modal from "./home-page/content/cart/modal";
 
 import Profile from "./home-page/signIn__signUp/profile";
 
-import HomeAdmin from "./admin/homeAdmin";
+import DashboardAdmin from "./admin/dashboardAdmin";
+import MovieAdmin from "./admin/movieAdmin";
 import AddMovie from "./admin/addMovie";
 import DeleteMovie from "./admin/deleteMovie";
 import UpdateMovie from "./admin/updateMovie";
@@ -69,7 +70,12 @@ const routeAdmin = [
     {
         path:"/admin/dashboard",
         exact:true,
-        component:HomeAdmin
+        component:DashboardAdmin
+    },
+    {
+        path:"/admin/list-movie",
+        exact: false,
+        component:MovieAdmin
     },
     {
         path:"/admin/add-movie",

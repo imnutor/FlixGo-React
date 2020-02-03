@@ -1,47 +1,72 @@
 import React, { Component } from "react";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default class NavBarAdmin extends Component {
-  logoutAdmin = () => {
-    localStorage.removeItem("userAdmin");
-  }
   render() {
     return (
-      <div>
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-          <NavLink className="navbar-brand" to="/admin/dashboard">
-            AdminMovie
-          </NavLink>
-
-          <div className="collapse navbar-collapse" id="collapsibleNavId">
-            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li className="nav-item">
-                <NavLink className="nav-link" to="/admin/add-movie">
-                  Add Movie
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/admin/update-movie">
-                  Update Movie
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/admin/delete-movie">
-                  Delete Movie
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/">
-                  <button className="btn btn-secondary btn-sm" onClick={this.logoutAdmin}>
-                    Logout
-                  </button>
-
-                </NavLink>
-              </li>
-            </ul>
+      <ul
+        className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+        id="accordionSidebar"
+      >
+        {/* Sidebar - Brand */}
+        <a
+          className="sidebar-brand d-flex align-items-center justify-content-center"
+          href="#"
+        >
+          <div className="sidebar-brand-text mx-3">
+            Movie Admin <sup>2</sup>
           </div>
-        </nav>
-      </div>
+        </a>
+        {/* Divider */}
+        <hr className="sidebar-divider my-0" />
+        {/* Nav Item - Dashboard */}
+        <li className="nav-item active">
+          <NavLink className="nav-link" to="/admin/dashboard">
+            <i className="fas fa-fw fa-tachometer-alt" />
+            <span>Dashboard</span>
+          </NavLink>
+        </li>
+        {/* Divider */}
+        <hr className="sidebar-divider" />
+        {/* Heading */}
+        <div className="sidebar-heading">List</div>
+
+        <li className="nav-item">
+          <a className="nav-link" href="#">
+            <span>User</span>
+          </a>
+        </li>
+
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/admin/list-movie">
+            <span>Movie</span>
+          </NavLink>
+        </li>
+        {/* Divider */}
+        <hr className="sidebar-divider" />
+        {/* Heading */}
+        <div className="sidebar-heading">Permission</div>
+        
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/admin/add-movie">
+            <span>Add Movie</span>
+          </NavLink>
+        </li>
+        {/* Nav Item - Charts */}
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/admin/delete-movie">
+            <span>Delete Movie</span>
+          </NavLink>
+        </li>
+        {/* Nav Item - Tables */}
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/admin/update-movie">
+            <span>Update Movie</span>
+          </NavLink>
+        </li>
+        {/* Divider */}
+        <hr className="sidebar-divider d-none d-md-block" />
+      </ul>
     );
   }
 }

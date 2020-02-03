@@ -30,7 +30,7 @@ class SignIn extends Component {
                 {/* authorization form */}
                 <form onSubmit={this.handleOnSubmit} className="sign__form">
                   <NavLink to="/" className="sign__logo">
-                    <img src="./image/logo.svg" alt="" />
+                    <img src="/image/logo-fix.png" alt="" />
                   </NavLink>
                   <div className="sign__group">
                     <input

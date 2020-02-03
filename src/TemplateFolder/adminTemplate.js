@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Route, Redirect } from "react-router-dom";
 import NavBarAdmin from "../admin/navBarAdmin";
 
+
 const AdminLayout = props => {
   return (
     <Fragment>

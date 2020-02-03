@@ -12,6 +12,8 @@ class AddMovie extends Component {
       trailer: "",
       hinhAnh: "",
       moTa: "",
+      maNhom:"GP06",
+      ngayKhoiChieu: "",
       danhGia: ""
     };
   }
@@ -29,7 +31,7 @@ class AddMovie extends Component {
   };
   render() {
     return (
-      <div style={{  backgroundColor:"#fff" }}>
+      <div style={{  backgroundColor:"#fff", width:"100%" }}>
         <form className="container" onSubmit={this.handleOnSubmit}>
           <h3 className="display-4">Thêm Phim</h3>
           <div className="row">
@@ -55,6 +57,16 @@ class AddMovie extends Component {
                 <input
                   className="form-control"
                   name="biDanh"
+                  onChange={this.handleOnChange}
+                />
+              </div>
+              <div className="form-group">
+                <h3>Ngày Khởi Chiếu</h3>
+                <input
+                  className="form-control"
+                  name="ngayChieu"
+                  type="date"
+                  
                   onChange={this.handleOnChange}
                 />
               </div>

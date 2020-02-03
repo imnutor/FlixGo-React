@@ -59,11 +59,13 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App" >
         <Switch>
           {showMenuHome(routeHome)}
           {showProfile(routeProfie)}
+          <div style={{display:"flex"}}>
           {showMenuAdmin(routeAdmin)}
+          </div>
           <Route path="/admin" exact={true} component={Admin} />
           <Route path="/Login" exact={true} component={SignIn} />
           <Route path="/SignUp" component={SignUp} />
