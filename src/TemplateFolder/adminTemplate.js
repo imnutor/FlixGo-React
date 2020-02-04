@@ -19,9 +19,13 @@ export default function AdminTemplate({ Component, ...props }) {
       render={propsComponent => {
         if (localStorage.getItem("userAdmin")) {
           return (
+            <div className="wrapper" style={{display:"flex"}}>
             <AdminLayout>
+              
               <Component {...propsComponent} />
+              
             </AdminLayout>
+            </div>
           );
         }
         return <Redirect to="/admin" />
