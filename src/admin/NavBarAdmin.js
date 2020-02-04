@@ -32,9 +32,9 @@ export default class NavBarAdmin extends Component {
         <div className="sidebar-heading">List</div>
 
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <NavLink className="nav-link" to="/admin/list-user">
             <span>User</span>
-          </a>
+          </NavLink>
         </li>
 
         <li className="nav-item">

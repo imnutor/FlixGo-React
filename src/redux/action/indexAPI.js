@@ -65,6 +65,26 @@ export const actGetListCartoon = listCartoon => {
   };
 };
 
+export const actGetListUserAPI = () => {
+  return dispatch => {
+    Axios({
+      method: "GET",
+      url: "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP06"
+    })
+      .then(result => {
+        dispatch(actGetListUser(result.data));
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+}
+export const actGetListUser = listUser => {
+  return {
+    type: ActionType.GET_LIST_USER,
+    listUser
+  }
+}
 export const actDetailMovieAPI = id => {
   return dispatch => {
     Axios({
@@ -239,3 +259,4 @@ export const onFilter = keyword => {
     keyword
   };
 };
+

@@ -11,6 +11,7 @@ import Profile from "./home-page/signIn__signUp/profile";
 
 import DashboardAdmin from "./admin/dashboardAdmin";
 import MovieAdmin from "./admin/movieAdmin";
+import UserAdmin from "./admin/userAdmin";
 import AddMovie from "./admin/addMovie";
 import DeleteMovie from "./admin/deleteMovie";
 import UpdateMovie from "./admin/updateMovie";
@@ -76,6 +77,11 @@ const routeAdmin = [
         path:"/admin/list-movie",
         exact: false,
         component:MovieAdmin
+    },
+    {
+        path:"/admin/list-user",
+        exact:false,
+        component:UserAdmin
     },
     {
         path:"/admin/add-movie",

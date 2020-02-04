@@ -1,6 +1,7 @@
 import * as ActionType from "./../contanst/actionType";
 
 let initialState = {
+  listUser: [],
   currentUser: {},
   cart: []
 };
@@ -32,7 +33,10 @@ const userReducer = (state = initialState, action) => {
       state.cart = cartUpdate;
       return { ...state };
     }
-
+    case ActionType.GET_LIST_USER:
+      state.listUser = action.listUser;
+      return { ...state };
+      
     default:
       return { ...state };
   }
